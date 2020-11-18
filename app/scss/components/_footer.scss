@@ -1,0 +1,83 @@
+/* footer
+*******************************************************************/
+
+footer {
+  position: relative;
+  padding: 80px 15px 20px;
+  font-size: 14px;
+  border-top: 1px solid $gray-200;
+  background: $white;
+
+  @media (min-width: 1200px) and (max-width: 1449px) {
+    .footer-nav {
+      width: 1169px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 1450px) {
+    padding-left: 140px;
+    padding-right: 140px;
+    .footer-nav {
+      width: auto;
+    }
+  }
+
+  a {
+    color: $body-color;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $app-color-1;
+    }
+  }
+
+  h4 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  h6 {
+    font-size: 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    display: inline-block;
+  }
+
+  .accordion .btn-accordion {
+      min-height: auto;
+      font-size: 16px;
+      padding: 10px 38px 15px 0;
+      color: $app-color-1;
+      &::after {
+        font-size: 15px;
+        right: 10px;
+      }
+  }
+
+  .nav-link {
+    padding: 0;
+    margin-bottom: 15px;
+    @include transition(color .2s ease);
+    color: $black;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $app-color-1;
+    }
+  }
+
+  .nav-link-social {
+    @include transition(color .2s ease);
+    color: $black;
+    text-decoration: none;
+    font-size: 22px;
+    &:hover,
+    &:focus {
+      color: $app-color-1;
+    }
+  }
+
+}
+

@@ -1,0 +1,128 @@
+/* dropdown
+*******************************************************************/
+
+.dropdown {
+  .dropdown-toggle {
+    padding-right: 34px !important;
+    &::after {
+      position: absolute;
+      right: 1rem;
+      top: 12px;
+      border: 0;
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'icomoon';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      vertical-align: middle;
+      content: "\e900";
+      font-size: 90%;
+    }
+  }
+}
+.dropdown-menu {
+  margin: 0;
+  border-radius: 0;
+  left: -12px;
+  border: 0;
+  @include media-breakpoint-only(xs) {
+    box-shadow: none;
+  }
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+  .dropdown-submenu {
+    > .dropdown-menu {
+      margin: 0;
+      top: 0;
+      left: 100%;
+      min-height: calc(100% + 1px);
+      @include media-breakpoint-only(xs) {
+        box-shadow: none;
+        border-left: 0;
+        padding-left: 10px;
+      }
+      border-left: 1px solid $app-color-1;
+      box-shadow: 2px 4px 15px 0 rgba(0, 0, 0, 0.2);
+    }
+    .dropdown-item {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        height: 1px;
+        background: $app-color-1;
+        width: 0;
+        @include transition( width ease-in .2s );
+      }
+      padding-top: 7px;
+      padding-bottom: 7px;
+      opacity: .8;
+      position: relative;
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        &::before {
+          width: calc(100% - 58px);
+        }
+        background: transparent;
+        opacity: 1;
+        color: $black;
+      }
+      &.dropdown-toggle {
+        &::after {
+          position: absolute;
+          right: 16px;
+          top: 12px;
+          border: 0;
+          /* use !important to prevent issues with browser extensions that change fonts */
+          font-family: 'icomoon';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          /* Better Font Rendering =========== */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          display: inline-block;
+          vertical-align: middle;
+          @include media-breakpoint-up(sm) {
+            content: "\e902";
+          }
+          opacity: .4;
+          font-size: 90%;
+        }
+        padding: 7px 60px 7px 0 !important;
+        margin-left: 20px;
+        position: relative;
+        width: calc(100% - 20px);
+        border-bottom: 1px solid transparent;
+        &.active,
+        &:active,
+        &:focus,
+        &:hover {
+          background: transparent;
+          opacity: 1;
+          color: $black;
+          &::after {
+            opacity: 1;
+          }
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

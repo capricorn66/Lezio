@@ -1,0 +1,23 @@
+/* table
+*******************************************************************/
+
+.table {
+  &.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: $white;
+  }
+  &.table-striped tbody tr:nth-of-type(2n+2) {
+    background-color: rgba($gray-100,.5);
+  }
+  th, td {
+    border-bottom: 1px solid $gray-200;
+    border-top: 0;
+  }
+
+  th {
+    font-weight: 600;
+  }
+  th, td {
+    padding: 1.25rem 0.75rem 1.15rem 0.75rem;
+  }
+
+}

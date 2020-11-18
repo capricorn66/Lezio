@@ -1,0 +1,134 @@
+.nav-scroll {
+
+	position: relative;
+	overflow: hidden;
+
+	.nav-tabs {
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		.nav-item {
+			white-space: nowrap;
+			margin-bottom: 1px;
+		}
+	}
+
+	.nav-scroll-btn {
+		top: 1px;
+		bottom: 2px;
+		&.nav-scroll-btn-left {
+			background: linear-gradient(to right, rgba($white, 1) 0%, rgba($white, 1) 50%, rgba($white, 0) 100%);
+		}
+
+		&.nav-scroll-btn-right {
+			background: linear-gradient(to right, rgba($white, 0) 0%, rgba($white, 1) 50%, rgba($white, 1) 100%);
+		}
+	}
+
+	@include media-breakpoint-down(xs) {
+		.nav-tabs {
+			width: auto;
+		}
+		.nav-scroll-btn {
+			width: 48px;
+
+			&.nav-scroll-btn-left {
+				&::after {
+					margin-left: 10px;
+				}
+			}
+
+			&.nav-scroll-btn-right {
+				&::after {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+
+	&.nav-scroll-init {
+		.nav-scroll-container {
+			.nav {
+				opacity: 1;
+			}
+		}
+	}
+
+	.nav-scroll-container {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		-webkit-overflow-scrolling: touch;
+		margin-bottom: -20px;
+		padding-bottom: 20px;
+		display: -ms-flexbox;
+		display: flex;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		.nav {
+			opacity: 0;
+			@include transition(opacity .1s ease);
+			-ms-flex: 1 0 auto;
+			flex: 1 0 auto;
+			margin: 0;
+
+			.nav-item {
+				display: block;
+			}
+
+		}
+	}
+
+	.nav-scroll-btn-right,
+	.nav-scroll-btn-left,
+	&[data-overflowing='left'] .nav-scroll-btn-right,
+	&[data-overflowing='none'] .nav-scroll-btn-right,
+	&[data-overflowing='right'] .nav-scroll-btn-left,
+	&[data-overflowing='none'] .nav-scroll-btn-left {
+		display: none;
+	}
+
+	&[data-overflowing='right'] .nav-scroll-btn-right,
+	&[data-overflowing='both'] .nav-scroll-btn-right,
+	&[data-overflowing='left'] .nav-scroll-btn-left,
+	&[data-overflowing='both'] .nav-scroll-btn-left {
+		display: block;
+	}
+
+
+	.nav-scroll-btn {
+		top: 0;
+		bottom: 0;
+		border: 0;
+		outline: 0;
+		padding: 0;
+		position: absolute;
+		cursor: pointer;
+		width: 60px;
+		z-index: 1;
+		text-align: center;
+		i {
+			position: relative;
+			top: -2px;
+		}
+
+		&:hover::after {
+			opacity: 1;
+		}
+
+		&.nav-scroll-btn-left {
+			background: linear-gradient(to right, rgba($white, 1) 0%, rgba($white, 1) 50%, rgba($white, 0) 100%);
+			left: 0;
+		}
+
+		&.nav-scroll-btn-right {
+			background: linear-gradient(to right, rgba($white, 0) 0%, rgba($white, 1) 50%, rgba($white, 1) 100%);
+			right: 0;
+		}
+	}
+
+}

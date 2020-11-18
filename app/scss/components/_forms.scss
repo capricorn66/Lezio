@@ -1,0 +1,39 @@
+/* forms
+*******************************************************************/
+
+.form-control {
+  border-radius: 6px;
+  border-color: $black;
+  font-size: .97rem;
+  height: 48px;
+  &:disabled,
+  &[readonly] {
+    background: $gray-200;
+  }
+  &:focus {
+    border-color: $app-color-1;
+  }
+}
+
+.input-group-text {
+  border: 0;
+  color: $gray-900;
+  background: transparent;
+  a[data-toggle="popover"] {
+    cursor: pointer;
+    color: $gray-900;
+    &:hover {
+      text-decoration: none;
+      color: $gray-900;
+    }
+  }
+}
+
+.form-group {
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+textarea.form-control {
+  min-height: 92px;
+}

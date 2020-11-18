@@ -1,0 +1,23 @@
+/* breadcrumb
+*******************************************************************/
+
+.breadcrumb {
+  background: none;
+  font-size: 14px;
+  border-bottom: 1px solid $gray-200;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 30px;
+  .breadcrumb-item {
+    &::before {
+      color: $gray-400;
+    }
+    &.active {
+      font-weight: 600;
+      color: $gray-500;
+    }
+    a {
+      color: $gray-400;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/* cookies
+*******************************************************************/
+
+.cookies {
+
+
+  @include media-breakpoint-down(sm) {
+    width: 100vw;
+    transform: none;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    border-radius: 18px 18px 0 0;
+  }
+  @include media-breakpoint-only(sm) {
+    padding: 60px 30px 30px;
+  }
+  @include media-breakpoint-only(xs) {
+    padding: 60px 20px 20px;
+  }
+
+  box-shadow: 0 0 0 10000px rgba($black,.75);
+  .cookies-close {
+    border: 0;
+    background: none;
+    position: absolute;
+    padding: 0;
+    top: 15px;
+    right: 15px;
+    @include media-breakpoint-only(sm) {
+      right: 30px;
+    }
+    @include media-breakpoint-only(xs) {
+      right: 20px;
+    }
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    line-height: 18px;
+    opacity: .7;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+}

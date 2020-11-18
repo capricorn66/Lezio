@@ -1,0 +1,47 @@
+/* news
+*******************************************************************/
+
+.news-box {
+  background-color: $white;
+  padding: 20px;
+  display: block;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: $body-color;
+  box-shadow: 0 5px 10px 0 rgba($gray-300,.4);
+  @include transition(box-shadow .2s ease);
+
+  &:hover,
+  &:focus {
+    color: $gray-900;
+    text-decoration: none;
+    box-shadow: 0 6px 14px 4px $gray-300;
+    i {
+      animation: bounce-h 1.4s infinite;
+    }
+  }
+
+  .news-box-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    min-height: 4.2em;
+    line-height: 1.4em;
+  }
+  .news-box-body {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    color: $gray-500;
+  }
+  .news-box-footer {
+    padding-top: 20px;
+    i {
+      font-size: 30px;
+      color: $app-color-1;
+      float: right;
+      margin: -5px 0 10px 10px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+// Default colors
+
+$white: #FFF;
+$black: #000;
+$lightblack: #0C1B1B;
+$gray-100: #F6F5F5;
+$gray-200: #DDDDDD;
+$gray-300: #CCC;
+$gray-400: #a7a9ac;
+$gray-500: #888;
+$gray-600: #717171;
+$gray-700: #585858;
+$gray-800: #474747;
+$gray-900: #343434;
+
+$body-color: $black;
+
+$alert-red: #ff4200;
+$alert-green: #559f4f;
+$alert-yellow: #ffd300;
+$alert-blue: #0b7bb9;
+
+
+//primary colors
+
+$app-color-1: #2B0DE6;
+$app-color-2: #580AB3;
+$app-color-3: #F8C539;
+
+
+// icons
+
+$icon-arrow-left-gray: url("../images/arrow-left-gray.svg") !default;
+$icon-arrow-right-gray: url("../images/arrow-right-gray.svg") !default;
+
+
+// Navs
+
+$nav-padding-x: 1.5rem !default;
+
+
+// Spacing
+$spacer: 10px !default;
+$spacers: () !default;
+$spacers: map-merge(
+    (
+        0: 0,
+        1: ($spacer * .25),
+        2: ($spacer * .5),
+        5: ($spacer * .75),
+        10: $spacer,
+        15: ($spacer * 1.5),
+        20: ($spacer * 2),
+        25: ($spacer * 2.5),
+        30: ($spacer * 3),
+        40: ($spacer * 4),
+        50: ($spacer * 5),
+        60: ($spacer * 6),
+        70: ($spacer * 7),
+        80: ($spacer * 8)
+    ),
+    $spacers
+);
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1460px
+) !default;
+
+
+// Grid containers
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1380px
+) !default;
+

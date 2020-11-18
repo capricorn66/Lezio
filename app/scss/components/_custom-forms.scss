@@ -1,0 +1,18 @@
+/* custom forms
+*******************************************************************/
+
+.custom-select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.custom-control-label::before {
+  border-color: $black;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: $app-color-1;
+  background-color: $app-color-1;
+}

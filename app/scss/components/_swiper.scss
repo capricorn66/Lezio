@@ -1,0 +1,75 @@
+/* swiper
+*******************************************************************/
+
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    font-size: 20px;
+    margin-right: 40px;
+    color: $gray-900;
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 48px;
+    font-weight: 500;
+    padding-right: 4px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      height: 3px;
+      background: $app-color-1;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      transform: translateY(-7px);
+      @include transition( all ease-in .2s );
+    }
+
+    &.swiper-pagination-bullet-active,
+    &:active,
+    &:focus,
+    &:hover {
+      &::before {
+        opacity: 1;
+        transform: translateY(-12px);
+      }
+    }
+
+    @include media-breakpoint-only(lg) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-down(md) {
+      &::before {
+        background: $gray-300;
+        opacity: 1;
+        transform: translateY(-12px);
+      }
+      &.swiper-pagination-bullet-active,
+      &:active,
+      &:focus,
+      &:hover {
+        &::before {
+          background: $app-color-1;
+        }
+      }
+      width: 40px;
+      height: 20px;
+      min-height: auto;
+      margin-right: 5px;
+      .item-name {
+        display: none;
+      }
+    }
+
+  }
+}

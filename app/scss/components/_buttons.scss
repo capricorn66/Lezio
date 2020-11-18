@@ -1,0 +1,128 @@
+/* buttons
+*******************************************************************/
+
+.btn {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 6px;
+  border: 0;
+  height: 48px;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include media-breakpoint-down(sm) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @include transition( all .1s ease-in, background .4s cubic-bezier(0.68, 0, 0.265, 1) .01s );
+}
+
+.btn-link {
+  color: $app-color-1;
+  .btn-text {
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      height: 2px;
+      background: $app-color-1;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transform: translateY(5px);
+      @include transition( all ease-in .2s );
+    }
+  }
+
+  &.active,
+  &:active,
+  &:focus,
+  &:hover {
+    color: $app-color-1;
+    text-decoration: none;
+    .btn-text {
+      &::before {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+}
+
+.btn-primary {
+  color: white;
+  border: 0;
+  background-size: auto 200%;
+  background-image: linear-gradient(to bottom, $app-color-1 0%, $app-color-2 50%, $app-color-1 100%);
+  transition: 0.5s;
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  &:hover,
+  &:focus {
+    background-position: center bottom;
+  }
+}
+
+.btn-outline-primary {
+  border-color: $app-color-1;
+  box-shadow: 0 0 0 1px $app-color-1 inset;
+  color: $app-color-1;
+  background-size: auto 200%;
+  background-image: linear-gradient(to bottom, $white 0%, $white 50%, $app-color-1 50%, $app-color-1 100%);
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  &:hover,
+  &:focus {
+    background-position: center bottom;
+    color: white;
+  }
+}
+
+.btn-lg {
+  height: 60px;
+  font-size: 16px;
+}
+
+main, .section {
+  .btn-primary {
+    box-shadow: 0 5px 40px -10px rgba(0,0,0,.5);
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &:focus {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 3px;
+        top: 100%;
+      }
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .btn-outline-primary {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &:focus {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 3px;
+        top: 100%;
+      }
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px $app-color-1 inset;
+    }
+  }
+}

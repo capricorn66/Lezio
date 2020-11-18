@@ -1,0 +1,40 @@
+/* pagination
+*******************************************************************/
+
+.pagination {
+
+  .page-item {
+    &.disabled {
+      .page-link {
+        opacity: .5;
+        color: $gray-400;
+      }
+    }
+    &.active {
+      .page-link,
+      .page-link:hover,
+      .page-link:focus {
+        background-color: $app-color-1;
+        border-color: $app-color-1;
+        color: $white;
+      }
+    }
+    .page-link {
+      color: $app-color-1;
+      border-radius: 19px;
+      height: 38px;
+      min-width: 38px;
+      text-align: center;
+      margin: 0 4px;
+      &:hover,
+      &:focus {
+        background-color: $gray-200;
+      }
+      i {
+        font-size: 12px;
+        margin: -3px 0 0;
+      }
+    }
+
+  }
+}

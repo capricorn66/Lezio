@@ -1,0 +1,25 @@
+/* reboot
+*******************************************************************/
+html {
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $body-color;
+  @include media-breakpoint-up(lg) {
+    padding-top: 126px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 146px;
+  }
+}
+
+a {
+  color: $app-color-1;
+  &:focus,
+  &:hover {
+    color: darken($app-color-1, 10%)
+  }
+}
